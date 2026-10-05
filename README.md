@@ -92,3 +92,39 @@ Repositório preparado para receber a implementação oficial do site.
 ---
 
 **Princípio de desenvolvimento:** `PATCH > REWRITE` · `REUSE > RECREATE` · `SIMPLE > COMPLEX` · `WORKING CODE > UNNECESSARY REFACTOR`
+
+## 11. Produção e publicação
+
+Arquitetura atual:
+
+- **GitHub:** fonte oficial do código do site;
+- **Amazon S3:** bucket `brmovetogo-site`;
+- **Amazon CloudFront:** distribuição `E2K57WGDC7AHVV`;
+- **Domínios:** `brmovetogo.com` e `www.brmovetogo.com`;
+- **Default root object:** `index.html`.
+
+Fluxo alvo de publicação:
+
+```text
+GitHub main
+   ↓
+GitHub Actions
+   ↓
+AWS OIDC / IAM Role
+   ↓
+S3 sync
+   ↓
+CloudFront invalidation
+   ↓
+Produção
+```
+
+O workflow automático deve ser ativado somente após a configuração do IAM Role/OIDC e da região AWS correspondente ao bucket.
+
+### Portal do Cliente
+
+- Header **Rastrear envio ↗** → `https://envios.brmovetogo.com/portaldocliente/`;
+- Rodapé **Ajuda > Portal do Cliente** → mesma URL;
+- Rodapé **Rastrear meu envio** permanece apontando para o rastreio público enquanto ele existir;
+- o link administrativo para `https://envios.brmovetogo.com/` não deve ser exibido no site público.
+
