@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Simulador e cotação de mudança EUA → Brasil | BrMoveToGo</title>
+  <meta name="description" content="Simule o valor do seu envio por caixa (Grande Wardrobe, Short Wardrobe, Extra Large e TV), informe os endereços pelo ZIP e CEP e peça sua cotação pelo WhatsApp.">
+  <meta name="theme-color" content="#2b063f">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/img/favicon-48.png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+  <script>document.documentElement.className+=' js'</script>
+  <link rel="stylesheet" href="/novo/assets/site.css?v=1e39c652">
+  
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header class="site-header" id="top">
+  <div class="container nav-wrap">
+    <a class="brand" href="/novo/" aria-label="BrMoveToGo — página inicial"><img src="/img/logo-header.png" alt="BR Move To Go" width="650" height="190"></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    <nav id="menu" class="nav" aria-label="Navegação principal"><a href="/novo/">Início</a><a href="/novo/mudancas/">Mudanças</a><a href="/novo/bagagem-e-documentos/">Bagagem e documentos</a><a href="https://envios.brmovetogo.com/rastreio" target="_blank" rel="noopener">Rastrear envio ↗</a><a class="btn btn-primary btn-small" href="/novo/simulador/" aria-current="page">Simular e pedir cotação</a></nav>
+  </div>
+</header>
+<main id="conteudo">
+
+<section class="page-hero"><div class="container"><nav class="crumbs" aria-label="Você está em"><a href="/novo/">Início</a><span aria-hidden="true">›</span><span>Simulador e cotação</span></nav>
+  <h1>Simule seu envio e peça sua cotação.</h1>
+  <p>Escolha as caixas, informe os endereços e envie o resumo pronto para a equipe pelo WhatsApp. Digite o ZIP ou o CEP e preenchemos o resto.</p></div></section>
+
+<section class="section section-alt" style="padding-top:clamp(28px,4vw,48px)"><div class="container">
+<form id="simForm" class="sim" novalidate autocomplete="on">
+  <div class="sim-main">
+    <section class="step-card" id="step-itens" aria-labelledby="t1">
+      <div class="step-title"><b>1</b><h2 id="t1">O que você vai enviar</h2></div>
+      <p class="step-sub">Escolha a quantidade de cada volume. O total é atualizado na hora.</p>
+      <div class="item"><div><h3>Grande Wardrobe <em>Grand W</em></h3><div class="specs">70 kg · 0,396 m³ por caixa</div><div class="specs">Eletrodomésticos pequenos, jogos de cama, kits e brinquedos.</div><div class="unit">US$ 700,00 <span style="font-weight:500;color:var(--muted)">por unidade</span></div></div>
+  <div class="item-right"><div class="stepper" role="group" aria-label="Quantidade de Grande Wardrobe">
+    <button type="button" data-step="minus" data-id="grand" aria-label="Diminuir Grande Wardrobe">−</button>
+    <input id="q-grand" type="number" min="0" max="99" value="0" inputmode="numeric" aria-label="Quantidade de Grande Wardrobe">
+    <button type="button" data-step="plus" data-id="grand" aria-label="Aumentar Grande Wardrobe">+</button></div>
+    <div class="subtotal" id="s-grand" aria-live="polite"></div></div></div><div class="item"><div><h3>Short Wardrobe <em>Short W</em></h3><div class="specs">60 kg · 0,267 m³ por caixa</div><div class="specs">Roupas, cama e volumes médios.</div><div class="unit">US$ 650,00 <span style="font-weight:500;color:var(--muted)">por unidade</span></div></div>
+  <div class="item-right"><div class="stepper" role="group" aria-label="Quantidade de Short Wardrobe">
+    <button type="button" data-step="minus" data-id="short" aria-label="Diminuir Short Wardrobe">−</button>
+    <input id="q-short" type="number" min="0" max="99" value="0" inputmode="numeric" aria-label="Quantidade de Short Wardrobe">
+    <button type="button" data-step="plus" data-id="short" aria-label="Aumentar Short Wardrobe">+</button></div>
+    <div class="subtotal" id="s-short" aria-live="polite"></div></div></div><div class="item"><div><h3>Extra Large <em>XL</em></h3><div class="specs">50 kg · 0,17 m³ por caixa</div><div class="specs">Utensílios, livros e itens variados.</div><div class="unit">US$ 550,00 <span style="font-weight:500;color:var(--muted)">por unidade</span></div></div>
+  <div class="item-right"><div class="stepper" role="group" aria-label="Quantidade de Extra Large">
+    <button type="button" data-step="minus" data-id="xl" aria-label="Diminuir Extra Large">−</button>
+    <input id="q-xl" type="number" min="0" max="99" value="0" inputmode="numeric" aria-label="Quantidade de Extra Large">
+    <button type="button" data-step="plus" data-id="xl" aria-label="Aumentar Extra Large">+</button></div>
+    <div class="subtotal" id="s-xl" aria-live="polite"></div></div></div><div class="item"><div><h3>TV <em>TV</em></h3><div class="specs">Valor por unidade.</div><div class="unit">US$ 450,00 <span style="font-weight:500;color:var(--muted)">por unidade</span></div></div>
+  <div class="item-right"><div class="stepper" role="group" aria-label="Quantidade de TV">
+    <button type="button" data-step="minus" data-id="tv" aria-label="Diminuir TV">−</button>
+    <input id="q-tv" type="number" min="0" max="99" value="0" inputmode="numeric" aria-label="Quantidade de TV">
+    <button type="button" data-step="plus" data-id="tv" aria-label="Aumentar TV">+</button></div>
+    <div class="subtotal" id="s-tv" aria-live="polite"></div></div></div>
+      <div class="fields" style="margin-top:18px">
+        <div class="field "><label for="notes">Outros itens ou observações <small>(opcional)</small></label><textarea id="notes" name="notes" rows="3" placeholder="Ex.: sofá, cama, bicicleta, caixas extras. Itens fora da tabela são avaliados pela equipe."></textarea></div>
+      </div>
+      <p class="note">Confira a <a href="/novo/bagagem-e-documentos/#itens" style="color:var(--purple);font-weight:700;text-decoration:underline">lista de itens que não aceitamos</a> antes de embalar.</p>
+    </section>
+
+    <section class="step-card" id="step-enderecos" aria-labelledby="t2">
+      <div class="step-title"><b>2</b><h2 id="t2">Endereços</h2></div>
+      <p class="step-sub">Digite o ZIP Code ou o CEP e a cidade, o estado e a rua aparecem automaticamente. Você pode corrigir qualquer campo.</p>
+      <div class="addr">
+        <h3><span class="flag">EUA</span> Endereço de origem (coleta)</h3>
+        <div class="fields">
+          <div class="field c-4"><label for="o_zip">ZIP Code <i aria-hidden="true">*</i></label><input id="o_zip" name="o_zip" inputmode="numeric" autocomplete="postal-code" maxlength="5" pattern="[0-9]{5}" placeholder="32801" required><div class="hint" id="o_zip_hint" aria-live="polite"></div></div>
+          <div class="field c-5"><label for="o_city">Cidade <i aria-hidden="true">*</i></label><input id="o_city" name="o_city" autocomplete="address-level2" required></div>
+          <div class="field c-3"><label for="o_uf">Estado <i aria-hidden="true">*</i></label><select id="o_uf" name="o_uf" autocomplete="address-level1" required><option value="">Selecione</option><option value="AL">AL — Alabama</option><option value="AK">AK — Alasca</option><option value="AZ">AZ — Arizona</option><option value="AR">AR — Arkansas</option><option value="CA">CA — Califórnia</option><option value="CO">CO — Colorado</option><option value="CT">CT — Connecticut</option><option value="DE">DE — Delaware</option><option value="DC">DC — Distrito de Colúmbia</option><option value="FL">FL — Flórida</option><option value="GA">GA — Geórgia</option><option value="HI">HI — Havaí</option><option value="ID">ID — Idaho</option><option value="IL">IL — Illinois</option><option value="IN">IN — Indiana</option><option value="IA">IA — Iowa</option><option value="KS">KS — Kansas</option><option value="KY">KY — Kentucky</option><option value="LA">LA — Louisiana</option><option value="ME">ME — Maine</option><option value="MD">MD — Maryland</option><option value="MA">MA — Massachusetts</option><option value="MI">MI — Michigan</option><option value="MN">MN — Minnesota</option><option value="MS">MS — Mississippi</option><option value="MO">MO — Missouri</option><option value="MT">MT — Montana</option><option value="NE">NE — Nebraska</option><option value="NV">NV — Nevada</option><option value="NH">NH — New Hampshire</option><option value="NJ">NJ — Nova Jersey</option><option value="NM">NM — Novo México</option><option value="NY">NY — Nova York</option><option value="NC">NC — Carolina do Norte</option><option value="ND">ND — Dakota do Norte</option><option value="OH">OH — Ohio</option><option value="OK">OK — Oklahoma</option><option value="OR">OR — Oregon</option><option value="PA">PA — Pensilvânia</option><option value="RI">RI — Rhode Island</option><option value="SC">SC — Carolina do Sul</option><option value="SD">SD — Dakota do Sul</option><option value="TN">TN — Tennessee</option><option value="TX">TX — Texas</option><option value="UT">UT — Utah</option><option value="VT">VT — Vermont</option><option value="VA">VA — Virgínia</option><option value="WA">WA — Washington</option><option value="WV">WV — Virgínia Ocidental</option><option value="WI">WI — Wisconsin</option><option value="WY">WY — Wyoming</option></select></div>
+          <div class="field c-8"><label for="o_street">Endereço (rua e número) <i aria-hidden="true">*</i></label><input id="o_street" name="o_street" autocomplete="address-line1" placeholder="Ex.: 123 Main St" required></div>
+          <div class="field c-4"><label for="o_unit">Apto / unidade</label><input id="o_unit" name="o_unit" autocomplete="address-line2" placeholder="Apt 4B"></div>
+        </div>
+      </div>
+      <div class="addr">
+        <h3><span class="flag">BRASIL</span> Endereço de destino (entrega)</h3>
+        <div class="fields">
+          <div class="field c-4"><label for="d_cep">CEP <i aria-hidden="true">*</i></label><input id="d_cep" name="d_cep" inputmode="numeric" autocomplete="off" maxlength="9" pattern="[0-9]{5}-?[0-9]{3}" placeholder="00000-000" required><div class="hint" id="d_cep_hint" aria-live="polite"></div></div>
+          <div class="field c-8"><label for="d_street">Rua / Avenida <i aria-hidden="true">*</i></label><input id="d_street" name="d_street" autocomplete="off" required></div>
+          <div class="field c-3"><label for="d_number">Número <i aria-hidden="true">*</i></label><input id="d_number" name="d_number" autocomplete="off" inputmode="text" required></div>
+          <div class="field c-4"><label for="d_comp">Complemento</label><input id="d_comp" name="d_comp" autocomplete="off" placeholder="Apto, bloco, casa…"></div>
+          <div class="field c-5"><label for="d_district">Bairro</label><input id="d_district" name="d_district" autocomplete="off"></div>
+          <div class="field c-8"><label for="d_city">Cidade <i aria-hidden="true">*</i></label><input id="d_city" name="d_city" autocomplete="off" required></div>
+          <div class="field c-4"><label for="d_uf">Estado <i aria-hidden="true">*</i></label><select id="d_uf" name="d_uf" autocomplete="off" required><option value="">Selecione</option><option value="AC">AC — Acre</option><option value="AL">AL — Alagoas</option><option value="AP">AP — Amapá</option><option value="AM">AM — Amazonas</option><option value="BA">BA — Bahia</option><option value="CE">CE — Ceará</option><option value="DF">DF — Distrito Federal</option><option value="ES">ES — Espírito Santo</option><option value="GO">GO — Goiás</option><option value="MA">MA — Maranhão</option><option value="MT">MT — Mato Grosso</option><option value="MS">MS — Mato Grosso do Sul</option><option value="MG">MG — Minas Gerais</option><option value="PA">PA — Pará</option><option value="PB">PB — Paraíba</option><option value="PR">PR — Paraná</option><option value="PE">PE — Pernambuco</option><option value="PI">PI — Piauí</option><option value="RJ">RJ — Rio de Janeiro</option><option value="RN">RN — Rio Grande do Norte</option><option value="RS">RS — Rio Grande do Sul</option><option value="RO">RO — Rondônia</option><option value="RR">RR — Roraima</option><option value="SC">SC — Santa Catarina</option><option value="SP">SP — São Paulo</option><option value="SE">SE — Sergipe</option><option value="TO">TO — Tocantins</option></select></div>
+        </div>
+      </div>
+      <p class="note">Para preencher o endereço, consultamos o ZIP e o CEP em serviços públicos de CEP (Zippopotam.us e ViaCEP). Só o número do ZIP/CEP é enviado nessa consulta.</p>
+    </section>
+
+    <section class="step-card" id="step-contato" aria-labelledby="t3">
+      <div class="step-title"><b>3</b><h2 id="t3">Seus dados</h2></div>
+      <p class="step-sub">Para a equipe retornar a cotação.</p>
+      <div class="fields">
+        <div class="field c-6"><label for="name">Nome <i aria-hidden="true">*</i></label><input id="name" name="name" autocomplete="name" required></div>
+        <div class="field c-6"><label for="phone">WhatsApp <i aria-hidden="true">*</i></label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+1 ou +55" required></div>
+        <div class="field c-6"><label for="email">E-mail <small>(opcional)</small></label><input id="email" name="email" type="email" autocomplete="email"></div>
+        <div class="field c-6"><label for="date">Data prevista <small>(opcional)</small></label><input id="date" name="date" type="month"></div>
+        <div class="field "><label for="type">Tipo de mudança</label><select id="type" name="type"><option>Mini Mudança</option><option>Mudança Completa</option><option>Envio Especial</option><option selected>Quero ajuda para definir</option></select></div>
+      </div>
+    </section>
+  </div>
+
+  <aside class="sim-summary" id="summary" aria-label="Resumo da simulação">
+    <h2>Resumo da simulação</h2>
+    <div class="sum-lines" id="sumLines" aria-live="polite"></div>
+    <div class="sum-total"><span>TOTAL ESTIMADO</span><strong id="sumTotal">US$ 0,00</strong></div>
+    <div class="sum-meta"><div><small>VOLUME</small><strong id="sumVol">0 m³</strong></div><div><small>PESO</small><strong id="sumKg">0 kg</strong></div></div>
+    <p class="sum-note" id="sumNoDims" style="display:none">A TV não entra no cálculo de volume e peso.</p>
+    <p class="sum-note">Estimativa inicial, não é orçamento final. A equipe confirma valores depois de analisar origem, destino e serviços adicionais.</p>
+    <div class="form-error" id="formError" role="alert"></div>
+    <button class="btn btn-primary" type="submit" style="width:100%">Enviar pelo WhatsApp →</button>
+    <div class="sent" id="sent" role="status">Abrimos o WhatsApp com o seu resumo. Se não abriu, use o botão abaixo.<br>
+      <a class="btn btn-wa" id="sentLink" href="#" target="_blank" rel="noopener">Abrir WhatsApp</a>
+      <button class="btn btn-outline" id="copyMsg" type="button" style="min-height:40px;padding:8px 16px;font-size:14px;margin-top:10px">Copiar resumo</button></div>
+    <p class="sum-note">Ao enviar, você será direcionado ao WhatsApp para concluir o contato. Nenhum pagamento é feito pelo site.</p>
+  </aside>
+</form>
+</div></section>
+<button class="sim-bar" id="simBar" type="button" aria-label="Ver resumo da simulação"><span><small id="barCount">0 volumes</small><strong id="barTotal">US$ 0,00</strong></span><span class="btn btn-primary btn-small">Ver resumo ↓</span></button>
+
+<section class="section"><div class="container split">
+  <div class="reveal"><span class="kicker">ANTES DE ENVIAR</span><h2 class="h2">Prepare a documentação enquanto espera a cotação.</h2>
+    <p style="color:var(--muted)">Reúna os documentos, gere a procuração e as declarações e confira os itens que não podem ir na mudança.</p></div>
+  <div class="link-list reveal">
+    <a href="/novo/bagagem-e-documentos/#documentos"><span>Checklist de documentos<small>O que reunir para a bagagem desacompanhada</small></span><span>→</span></a>
+    <a href="/novo/bagagem-e-documentos/#itens"><span>Itens não aceitos<small>Confira antes de embalar</small></span><span>→</span></a>
+    <a href="/novo/mudancas/#como-funciona"><span>Como funciona<small>Da cotação à chegada no Brasil</small></span><span>→</span></a>
+  </div>
+</div></section>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/img/logo.png" alt="BR Move To Go" width="862" height="296" loading="lazy" decoding="async">
+        <p>Soluções para mudanças dos Estados Unidos ao Brasil, com atendimento em Orlando, Flórida.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="/novo/">Início</a></li>
+          <li><a href="/novo/mudancas/">Mudanças</a></li>
+          <li><a href="/novo/bagagem-e-documentos/">Bagagem e documentos</a></li>
+          <li><a href="/novo/simulador/">Simulador e cotação</a></li>
+          <li><a href="https://envios.brmovetogo.com/rastreio" target="_blank" rel="noopener">Rastrear meu envio ↗</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Ajuda</h4>
+        <ul>
+          <li><a href="/novo/#faq">Dúvidas frequentes</a></li>
+          <li><a href="/novo/mudancas/#caixas">Valores por caixa</a></li>
+          <li><a href="/novo/bagagem-e-documentos/#gerar">Gerar documentos</a></li>
+          <li><a href="/novo/bagagem-e-documentos/#itens">Itens não aceitos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="tel:+16893167399">+1 (689) 316-7399</a></li>
+          <li><a href="mailto:contato@brmovetogo.com">contato@brmovetogo.com</a></li>
+          <li><a href="https://wa.me/16893167399?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20BrMoveToGo%20e%20gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="https://www.instagram.com/brmovetogo/" target="_blank" rel="noopener">Instagram · @brmovetogo</a></li>
+          <li>Orlando, Florida · United States</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> BR Move To Go. Todos os direitos reservados.</span>
+      <span><button type="button" data-legal="privacy">Privacidade</button> · <button type="button" data-legal="terms">Termos de uso</button></span>
+      <a href="#top">Voltar ao topo ↑</a>
+    </div>
+  </div>
+</footer>
+<a class="wa-float" href="https://wa.me/16893167399?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20BrMoveToGo%20e%20gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="Falar com a BrMoveToGo pelo WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.21c-.26-.13-1.55-.76-1.79-.85-.24-.09-.42-.13-.59.13-.17.26-.68.85-.83 1.02-.15.17-.31.2-.57.07-.26-.13-1.1-.41-2.1-1.29-.78-.69-1.3-1.54-1.45-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.31.39-.46.13-.15.17-.26.26-.44.09-.17.04-.33-.02-.46-.07-.13-.59-1.42-.81-1.94-.21-.51-.43-.44-.59-.45h-.5c-.17 0-.46.07-.7.33-.24.26-.92.9-.92 2.2s.94 2.55 1.07 2.73c.13.17 1.85 2.83 4.49 3.97.63.27 1.12.43 1.5.55.63.2 1.2.17 1.65.1.5-.07 1.55-.63 1.77-1.24.22-.61.22-1.13.15-1.24-.06-.11-.24-.17-.5-.3z"/><path d="M16.03 3.2A12.62 12.62 0 0 0 5.2 22.31L3.5 28.8l6.64-1.74A12.6 12.6 0 1 0 16.03 3.2zm0 22.94c-2.02 0-4-.55-5.72-1.59l-.41-.24-3.94 1.03 1.05-3.84-.27-.42a10.35 10.35 0 1 1 9.29 5.06z"/></svg><b>WhatsApp</b></a>
+<div class="legal-modal" id="privacyModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Política de Privacidade">
+  <div class="legal-dialog">
+    <button class="legal-close" type="button" aria-label="Fechar">×</button>
+    <span class="kicker">PRIVACIDADE</span>
+    <h2>Política de Privacidade</h2>
+    <p>Os dados informados no formulário e no simulador são utilizados para organizar sua solicitação de cotação. O site não processa pagamentos e o envio da solicitação ocorre por meio do WhatsApp.</p>
+    <p>Não inclua documentos pessoais, dados bancários ou informações sensíveis no campo de descrição. Informações adicionais necessárias à contratação devem ser tratadas diretamente com a equipe.</p>
+    <small>Texto informativo inicial. Recomenda-se revisão jurídica antes da publicação definitiva.</small>
+  </div>
+</div>
+<div class="legal-modal" id="termsModal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Termos de Uso">
+  <div class="legal-dialog">
+    <button class="legal-close" type="button" aria-label="Fechar">×</button>
+    <span class="kicker">TERMOS</span>
+    <h2>Termos de Uso</h2>
+    <p>As informações e estimativas apresentadas neste site têm finalidade informativa. O simulador de volume não constitui proposta comercial, preço final, prazo garantido ou confirmação de disponibilidade.</p>
+    <p>A contratação dos serviços ocorre somente após análise do cenário, apresentação da proposta aplicável e aceite entre as partes.</p>
+    <small>Texto informativo inicial. Recomenda-se revisão jurídica antes da publicação definitiva.</small>
+  </div>
+</div>
+
+<script>window.BMG={"whatsapp": "16893167399", "products": [{"id": "grand", "name": "Grande Wardrobe", "price": 700, "kg": 70, "m3": 0.396}, {"id": "short", "name": "Short Wardrobe", "price": 650, "kg": 60, "m3": 0.267}, {"id": "xl", "name": "Extra Large", "price": 550, "kg": 50, "m3": 0.17}, {"id": "tv", "name": "TV", "price": 450, "kg": null, "m3": null}]}</script>
+<script src="/novo/assets/site.js?v=1e39c652" defer></script>
+</body>
+</html>
