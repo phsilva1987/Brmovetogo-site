@@ -458,16 +458,3 @@
 
   render();
 })();
-
-/* Instagram: carrega o post só ao tocar (evita iframes de terceiros e áreas em branco) */
-(function () {
-  document.addEventListener('click', function (e) {
-    var b = e.target.closest && e.target.closest('.ig-ph[data-ig]');
-    if (!b) return;
-    var f = document.createElement('iframe');
-    f.className = 'ig-frame'; f.src = b.getAttribute('data-ig');
-    f.title = 'Post do Instagram da BrMoveToGo'; f.setAttribute('scrolling', 'no');
-    f.setAttribute('allowtransparency', 'true'); f.setAttribute('allow', 'encrypted-media');
-    b.replaceWith(f);
-  });
-})();
