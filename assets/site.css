@@ -4,3 +4,14 @@
 .site-footer li{margin-bottom:0}.site-footer li a{display:inline-block;padding:10px 0}.footer-bottom a,.footer-bottom button{display:inline-block;padding:10px 0}.card .text-link{padding:10px 0}
 @media(max-width:700px){.site-footer{padding-bottom:84px}}
 .contact-line{display:flex;flex-wrap:wrap;gap:4px 22px;margin-top:14px;font-size:15px}.contact-line a{color:#fff;text-decoration:underline;padding:8px 0}.contact-line a:hover{color:var(--yellow)}.final-cta .cta-row{align-items:center}.nav a{white-space:nowrap}
+.ig-block .ig-grid{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-webkit-overflow-scrolling:touch;justify-items:initial}
+.ig-block .ig-grid::-webkit-scrollbar{display:none}
+.ig-block .ig-item{flex:0 0 100%;max-width:none;scroll-snap-align:start}
+@media(min-width:700px){.ig-block .ig-item{flex-basis:calc(50% - 9px)}}
+.ig-block .ig-frame{max-width:540px}
+.ig-ctrl{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:14px}
+.ig-ctrl button{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--purple);background:#fff;color:var(--purple);font-size:22px;font-weight:800;cursor:pointer;line-height:1}
+.ig-ctrl button:hover{background:#f3eaf7}
+.ig-ctrl span{font-size:14px;color:var(--muted);min-width:64px;text-align:center}
+@media(prefers-reduced-motion:reduce){.ig-block .ig-grid{scroll-behavior:auto}}
+
