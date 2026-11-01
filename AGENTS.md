@@ -29,7 +29,7 @@ Itens que parecem legado (**fato:** sem referência nas páginas atuais ou no si
 ## Regras do site
 - **Rastreamento só com consentimento:** `assets/track.js` carrega GA4 e Meta Pixel apenas depois do aceite (chave `bmg_consent` no `localStorage`) e dispara `whatsapp_click` / `generate_lead` (no `/simulador`). Não carregar tracking antes do consentimento nem remover o banner.
 - Ao alterar `site.css`, `site.js` ou `track.js`, atualizar o `?v=` em **todas** as páginas que os referenciam (`index.html`, `mudancas/`, `simulador/`, `bagagem-e-documentos/`).
-- Header "Rastrear envio" e rodapé "Ajuda > Portal do Cliente" apontam para `https://envios.brmovetogo.com/portaldocliente/`. **O link administrativo `https://envios.brmovetogo.com/` não deve aparecer no site público.**
+- Header "Área do Cliente" e rodapé "Ajuda > Área do Cliente" apontam para `https://envios.brmovetogo.com/portaldocliente/`. **O link administrativo `https://envios.brmovetogo.com/` não deve aparecer no site público.**
 - Não inventar serviços, rotas, coberturas, prazos, clientes, avaliações, números ou garantias. Não misturar informação jurídica ou operacional confidencial com conteúdo público.
 - Não quebrar o fluxo de contato/orçamento (CTAs e WhatsApp).
 - Mudou páginas ou URLs: atualizar `sitemap.xml` (domínio `www.brmovetogo.com`).
