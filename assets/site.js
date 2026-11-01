@@ -495,3 +495,14 @@
   });
 })();
 
+/* Instagram: quando o bloco se aproxima da tela, carrega todos os posts do carrossel (nenhum fica em branco ao trocar) */
+(function () {
+  var blocks = [].slice.call(document.querySelectorAll('.ig-block'));
+  function load(b) { [].slice.call(b.querySelectorAll('iframe.ig-frame')).forEach(function (f) { f.loading = 'eager'; }); }
+  if (!('IntersectionObserver' in window)) { blocks.forEach(load); return; }
+  var io = new IntersectionObserver(function (en) {
+    en.forEach(function (e) { if (e.isIntersecting) { load(e.target); io.unobserve(e.target); } });
+  }, { rootMargin: '800px 0px' });
+  blocks.forEach(function (b) { io.observe(b); });
+})();
+
