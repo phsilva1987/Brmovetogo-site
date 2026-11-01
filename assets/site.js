@@ -267,6 +267,7 @@
     v = parseInt(v, 10);
     qty[id] = isFinite(v) && v > 0 ? Math.min(v, 99) : 0;
     render();
+    try { localStorage.setItem('bmg_sim_qty', JSON.stringify(qty)); } catch (e) {}
   }
   $$('[data-step]').forEach(function (b) {
     b.addEventListener('click', function () {
@@ -291,6 +292,12 @@
   if (simBar) simBar.addEventListener('click', function () {
     summaryBox.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
   });
+
+  /* Recupera as quantidades do último acesso (só neste navegador) */
+  try {
+    var sv = JSON.parse(localStorage.getItem('bmg_sim_qty') || '{}');
+    P.forEach(function (p) { var n = parseInt(sv[p.id], 10); if (isFinite(n) && n > 0) qty[p.id] = Math.min(n, 99); });
+  } catch (e) {}
 
   /* Pré-preenchimento pela URL: ?add=grand,tv  &tipo=mini|completa|especial|ajuda */
   try {
@@ -450,4 +457,17 @@
   });
 
   render();
+})();
+
+/* Instagram: carrega o post só ao tocar (evita iframes de terceiros e áreas em branco) */
+(function () {
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('.ig-ph[data-ig]');
+    if (!b) return;
+    var f = document.createElement('iframe');
+    f.className = 'ig-frame'; f.src = b.getAttribute('data-ig');
+    f.title = 'Post do Instagram da BrMoveToGo'; f.setAttribute('scrolling', 'no');
+    f.setAttribute('allowtransparency', 'true'); f.setAttribute('allow', 'encrypted-media');
+    b.replaceWith(f);
+  });
 })();

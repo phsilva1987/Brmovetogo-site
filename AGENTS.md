@@ -41,3 +41,9 @@ Itens que parecem legado (**fato:** sem referência nas páginas atuais ou no si
 ## Nunca
 - Colocar secret, token ou dado de lead/cliente no repositório (ele é público).
 - Criar V2/New/Final, novas cópias paralelas de páginas, ou adicionar dependências sem necessidade.
+
+## Checklist: trocar preço por caixa
+O preço está escrito à mão. Ao mudar, atualizar **todos** estes pontos (e a cópia em `novo/`, que é noindex):
+- `index.html` e `mudancas/index.html`: 4 cartões `.price`, meta description/og/JSON-LD, FAQ e chip "valores a partir de" (= menor preço, hoje a TV);
+- `simulador/index.html`: 4 linhas `.unit` (formato sem centavos, igual ao resto do site) e `window.BMG.products[].price`;
+- depois: `grep -rnE 'US\$ ?[0-9]{3}' --include=*.html .` para achar valor antigo esquecido.
