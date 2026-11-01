@@ -458,3 +458,40 @@
 
   render();
 })();
+
+/* Instagram: carrossel (2 por vez no desktop, 1 no celular), setas e troca automática */
+(function () {
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  [].slice.call(document.querySelectorAll('.ig-block .ig-grid')).forEach(function (g) {
+    var items = g.querySelectorAll('.ig-item');
+    if (items.length < 2) return;
+    var ctrl = document.createElement('div'); ctrl.className = 'ig-ctrl';
+    ctrl.innerHTML = '<button type="button" aria-label="Posts anteriores">‹</button><span aria-live="polite"></span><button type="button" aria-label="Próximos posts">›</button>';
+    g.parentNode.insertBefore(ctrl, g.nextSibling);
+    var prev = ctrl.children[0], lab = ctrl.children[1], next = ctrl.children[2], paused = false, timer;
+    function step() { return items[1].offsetLeft - items[0].offsetLeft; }
+    function visible() { return Math.max(1, Math.round(g.clientWidth / step())); }
+    function idx() { return Math.round(g.scrollLeft / step()); }
+    function pages() { return Math.ceil(items.length / visible()); }
+    function upd() {
+      var multi = g.scrollWidth > g.clientWidth + 4; ctrl.style.display = multi ? '' : 'none';
+      lab.textContent = (Math.floor(idx() / visible()) + 1) + ' / ' + pages();
+    }
+    var cur = 0;
+    function go(dir) {
+      var v = visible(), ni = cur + dir * v;
+      if (ni >= items.length) ni = 0; else if (ni < 0) ni = Math.floor((items.length - 1) / v) * v;
+      cur = ni;
+      g.scrollTo({ left: items[ni].offsetLeft - items[0].offsetLeft, behavior: reduce ? 'auto' : 'smooth' });
+    }
+    prev.addEventListener('click', function () { go(-1); });
+    next.addEventListener('click', function () { go(1); });
+    g.addEventListener('scroll', function () { clearTimeout(g._t); g._t = setTimeout(function () { cur = idx(); upd(); }, 120); });
+    window.addEventListener('resize', upd);
+    ['mouseenter', 'focusin', 'touchstart'].forEach(function (e) { g.parentNode.addEventListener(e, function () { paused = true; }, { passive: true }); });
+    ['mouseleave', 'focusout'].forEach(function (e) { g.parentNode.addEventListener(e, function () { paused = false; }); });
+    if (!reduce) timer = setInterval(function () { if (!paused && !document.hidden && g.scrollWidth > g.clientWidth + 4) go(1); }, 9000);
+    upd();
+  });
+})();
+
