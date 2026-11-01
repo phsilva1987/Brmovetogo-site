@@ -488,9 +488,20 @@
     next.addEventListener('click', function () { go(1); });
     g.addEventListener('scroll', function () { clearTimeout(g._t); g._t = setTimeout(function () { cur = idx(); upd(); }, 120); });
     window.addEventListener('resize', upd);
-    ['mouseenter', 'focusin', 'touchstart'].forEach(function (e) { g.parentNode.addEventListener(e, function () { paused = true; }, { passive: true }); });
-    ['mouseleave', 'focusout'].forEach(function (e) { g.parentNode.addEventListener(e, function () { paused = false; }); });
-    if (!reduce) timer = setInterval(function () { if (!paused && !document.hidden && g.scrollWidth > g.clientWidth + 4) go(1); }, 9000);
+    /* Pausa só enquanto o mouse está em cima; toque/foco pausam por 15 s e depois retomam */
+    var hover = false, hold = 0, onScreen = false;
+    function holdFor(ms) { hold = Date.now() + ms; }
+    var box = g.parentNode;
+    box.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') hover = true; });
+    box.addEventListener('pointerleave', function () { hover = false; });
+    box.addEventListener('pointerdown', function (e) { if (e.pointerType !== 'mouse') holdFor(15000); }, { passive: true });
+    box.addEventListener('focusin', function () { holdFor(15000); });
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { onScreen = en[0].isIntersecting; }, { threshold: 0.2 }).observe(box); else onScreen = true;
+    /* Sem animação suave para quem reduz movimento, mas a troca continua (a pessoa pode pausar com o mouse/toque) */
+    timer = setInterval(function () {
+      if (hover || Date.now() < hold || document.hidden || !onScreen) return;
+      if (g.scrollWidth > g.clientWidth + 4) go(1);
+    }, 9000);
     upd();
   });
 })();
