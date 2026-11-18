@@ -56,8 +56,22 @@
         <div><b>03</b>Atendimento direto</div>
       </div>
     </div>
-    <style>.hero-photo{aspect-ratio:4/5;max-width:440px}.hero-photo .hs{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease}.hero-photo .hs.on{opacity:1}.hero-dots{position:absolute;top:14px;left:50%;transform:translateX(-50%);display:flex;justify-content:center;gap:6px;z-index:2;background:rgba(19,1,25,.55);padding:7px 10px;border-radius:999px}.hero-dots button{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,.55);cursor:pointer;transition:width .25s,background .25s}.hero-dots button{position:relative}.hero-dots button::after{content:"";position:absolute;inset:-14px -4px}.hero-dots button.on{background:#ffe400;width:22px;border-radius:6px}.hero-tag{position:absolute;top:34px;left:14px;z-index:2;background:rgba(19,1,25,.7);color:#fff;font-size:12px;font-weight:700;letter-spacing:.06em;padding:6px 10px;border-radius:999px}@media(prefers-reduced-motion:reduce){.hero-photo .hs{transition:none}}</style><div class="hero-photo">
-      <img class="hs on" src="/img/coleta-1.webp" alt="Coleta embalada e pronta para envio, em calçada nos EUA" width="720" height="900" fetchpriority="high" decoding="async"><img class="hs" src="/img/coleta-2.webp" alt="Caixa Wardrobe amarrada dentro da van de coleta" width="720" height="900" loading="lazy" decoding="async"><img class="hs" src="/img/coleta-3.webp" alt="Caixas Wardrobe filmadas e identificadas sobre pallet" width="720" height="900" loading="lazy" decoding="async"><img class="hs" src="/img/coleta-4.webp" alt="Volumes numerados e embalados, prontos para sair" width="720" height="900" loading="lazy" decoding="async"><img class="hs" src="/img/coleta-5.webp" alt="Carga carregada no caminhão para entrega" width="720" height="900" loading="lazy" decoding="async"><img class="hs" src="/img/coleta-6.webp" alt="Pallet com caixas identificadas no galpão" width="720" height="900" loading="lazy" decoding="async"><img class="hs" src="/img/coleta-7.webp" alt="Caixas embaladas com filme e numeradas" width="720" height="900" loading="lazy" decoding="async"><span class="hero-tag">OPERAÇÃO REAL, DOS EUA AO BRASIL</span><div class="hero-dots" role="group" aria-label="Fotos de coletas"></div>
+    <style>.hero-photo{aspect-ratio:4/5;max-width:440px}.hero-photo .hs{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease}.hero-photo .hs.on{opacity:1}.hero-dots{position:absolute;top:14px;left:50%;transform:translateX(-50%);display:flex;justify-content:center;gap:6px;z-index:2;background:rgba(19,1,25,.55);padding:7px 10px;border-radius:999px}.hero-dots button{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,.55);cursor:pointer;transition:width .25s,background .25s}.hero-dots button{position:relative}.hero-dots button::after{content:"";position:absolute;inset:-14px -4px}.hero-dots button.on{background:#ffe400;width:22px;border-radius:6px}.hero-tag{position:absolute;top:34px;left:14px;z-index:2;background:rgba(19,1,25,.7);color:#fff;font-size:12px;font-weight:700;letter-spacing:.06em;padding:6px 10px;border-radius:999px}@media(prefers-reduced-motion:reduce){.hero-photo .hs{transition:none}}</style>
+    <style>
+      .hero-photo [hidden]{display:none}
+      .hero-photo .black-move{visibility:hidden}
+      .hero-photo .black-move.on{visibility:visible}
+      .hero-photo .black-move img{object-fit:contain}
+      .black-move-cta{position:absolute;top:44px;left:50%;transform:translateX(-50%);padding:9px 14px;border-radius:999px;background:var(--yellow);color:var(--ink);font-size:clamp(.75rem,2.5vw,.9rem);font-weight:800;white-space:nowrap}
+    </style>
+    <div class="hero-photo">
+      <template id="black-move-slide">
+        <a class="hs black-move" href="https://wa.me/16893167399?text=BLACK%20MOVE" target="_blank" rel="noopener">
+          <img src="/img/black-move-2026.webp" width="1280" height="1600" alt="Black Move. Desconto de 5% a 10% conforme o serviço, para contratos fechados até 30/11/2026." decoding="async">
+          <span class="black-move-cta">Pedir cotação Black Friday →</span>
+        </a>
+      </template>
+      <img class="hs on" src="/img/coleta-1.webp" alt="Coleta embalada e pronta para envio, em calçada nos EUA" width="720" height="900" fetchpriority="high" decoding="async"><img class="hs" src="/img/coleta-2.webp" alt="Caixa Wardrobe amarrada dentro da van de coleta" width="720" height="900" loading="lazy" decoding="async"><img class="hs" src="/img/coleta-3.webp" alt="Caixas Wardrobe filmadas e identificadas sobre pallet" width="720" height="900" loading="lazy" decoding="async"><img class="hs" src="/img/coleta-4.webp" alt="Volumes numerados e embalados, prontos para sair" width="720" height="900" loading="lazy" decoding="async"><img class="hs" src="/img/coleta-5.webp" alt="Carga carregada no caminhão para entrega" width="720" height="900" loading="lazy" decoding="async"><img class="hs" src="/img/coleta-6.webp" alt="Pallet com caixas identificadas no galpão" width="720" height="900" loading="lazy" decoding="async"><img class="hs" src="/img/coleta-7.webp" alt="Caixas embaladas com filme e numeradas" width="720" height="900" loading="lazy" decoding="async"><span class="hero-tag">OPERAÇÃO REAL, DOS EUA AO BRASIL</span><div class="hero-dots" role="group" aria-label="Destaques da BrMoveToGo"></div>
       <a class="hero-photo-chip" href="/mudancas/#caixas"><div><small>VALORES A PARTIR DE</small><b>US$ 599 por volume</b></div><span>Ver valores →</span></a>
     </div>
   </div>
@@ -254,6 +268,66 @@
 </div>
 
 <script src="/assets/site.js?v=ig5" defer></script>
-<script>(function(){var p=document.querySelector(".hero-photo");if(!p)return;var s=[].slice.call(p.querySelectorAll(".hs")),d=p.querySelector(".hero-dots"),i=0,t,rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;s.forEach(function(_,k){var b=document.createElement("button");b.type="button";b.setAttribute("aria-label","Foto "+(k+1));b.onclick=function(){go(k);play()};d.appendChild(b)});function go(n){i=(n+s.length)%s.length;s.forEach(function(e,k){e.classList.toggle("on",k===i)});[].forEach.call(d.children,function(b,k){b.classList.toggle("on",k===i)})}function play(){clearInterval(t);if(!rm)t=setInterval(function(){go(i+1)},4500)}p.addEventListener("mouseenter",function(){clearInterval(t)});p.addEventListener("mouseleave",play);var x=0;p.addEventListener("touchstart",function(e){x=e.touches[0].clientX},{passive:true});p.addEventListener("touchend",function(e){var dx=e.changedTouches[0].clientX-x;if(Math.abs(dx)>40){go(i+(dx<0?1:-1));play()}});document.addEventListener("visibilitychange",function(){document.hidden?clearInterval(t):play()});go(0);play()})()</script>
+<script>
+(function(){
+  const photo = document.querySelector('.hero-photo');
+  if (!photo) return;
+  const campaign = photo.querySelector('#black-move-slide');
+  // Midnight in Orlando after November 30 (EST).
+  const campaignEnd = Date.parse('2026-12-01T00:00:00-05:00');
+  if (Date.now() < campaignEnd) photo.prepend(campaign.content.cloneNode(true));
+
+  const slides = Array.from(photo.querySelectorAll('.hs'));
+  const dots = photo.querySelector('.hero-dots');
+  const photoLabels = photo.querySelectorAll('.hero-tag, .hero-photo-chip');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  let current = 0;
+  let timer;
+  let touchX = 0;
+
+  slides.forEach((slide, index) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.setAttribute('aria-label', slide.matches('.black-move') ? 'Oferta Black Move' : slide.alt);
+    button.addEventListener('click', () => { show(index); play(); });
+    dots.append(button);
+  });
+
+  function show(index) {
+    current = (index + slides.length) % slides.length;
+    slides.forEach((slide, position) => {
+      const active = position === current;
+      slide.classList.toggle('on', active);
+      slide.setAttribute('aria-hidden', String(!active));
+      dots.children[position].classList.toggle('on', active);
+      dots.children[position].setAttribute('aria-current', String(active));
+    });
+    const promotionVisible = slides[current].matches('.black-move');
+    photoLabels.forEach(label => { label.hidden = promotionVisible; });
+  }
+
+  function play() {
+    clearTimeout(timer);
+    if (document.hidden || reducedMotion.matches || photo.matches(':hover, :focus-within')) return;
+    timer = setTimeout(() => {
+      show(current + 1);
+      play();
+    }, slides[current].matches('.black-move') ? 8000 : 4500);
+  }
+
+  photo.addEventListener('mouseenter', () => clearTimeout(timer));
+  photo.addEventListener('mouseleave', play);
+  photo.addEventListener('focusin', () => clearTimeout(timer));
+  photo.addEventListener('focusout', () => requestAnimationFrame(play));
+  photo.addEventListener('touchstart', event => { touchX = event.touches[0].clientX; }, {passive:true});
+  photo.addEventListener('touchend', event => {
+    const distance = event.changedTouches[0].clientX - touchX;
+    if (Math.abs(distance) > 40) { show(current + (distance < 0 ? 1 : -1)); play(); }
+  });
+  document.addEventListener('visibilitychange', play);
+  show(0);
+  play();
+})();
+</script>
 <script src="/assets/track.js?v=ux3" defer></script></body>
 </html>
