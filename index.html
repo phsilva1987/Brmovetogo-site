@@ -312,7 +312,7 @@
     timer = setTimeout(() => {
       show(current + 1);
       play();
-    }, slides[current].matches('.black-move') ? 8000 : 4500);
+    }, slides[current].matches('.black-move') ? 15000 : 4500);
   }
 
   photo.addEventListener('mouseenter', () => clearTimeout(timer));
